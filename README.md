@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏛️ Grievance Portal
 
-## Getting Started
+A modern, full-stack workplace grievance submission portal built with Next.js App Router.
 
-First, run the development server:
+## 🔗 Live Demo
+[View Live Site](https://grievance-portal-fe.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+- 4-step multi-step form with progress indicator
+- Per-step validation using Zod
+- Auto-save draft to localStorage
+- Restore draft on page reload
+- Server Actions for secure form submission
+- Beautiful dark UI with teal accent design
+- Fully responsive on all devices
+
+## 🛠️ Tech Stack
+- **Next.js 16** (App Router)
+- **React 18**
+- **TypeScript**
+- **Zod** (validation)
+- **Material UI** (form components)
+- **Tailwind CSS** (styling)
+
+## 📁 Project Structure
+```
+grievance-app/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   ├── actions/
+│   │   └── submit.ts        # Server Action
+│   └── grievance/
+│       ├── step1/page.tsx   # Personal Info
+│       ├── step2/page.tsx   # Grievance Details
+│       ├── step3/page.tsx   # Supporting Info
+│       └── step4/page.tsx   # Review & Submit
+├── components/
+│   └── ui.tsx               # Shared UI components
+└── lib/
+    ├── schemas.ts            # Zod validation schemas
+    └── draft.ts              # Draft save/load utility
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Setup & Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Steps
 
-## Learn More
+1. **Clone the repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd grievance-app
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install Zod**
+```bash
+npm install zod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the development server**
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+5. **Open in browser**
+```
+http://localhost:3000
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📋 Form Steps
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Step | Page | Description |
+|------|------|-------------|
+| 1 | `/grievance/step1` | Personal Info — Name, Employee ID, Email, Department |
+| 2 | `/grievance/step2` | Grievance Details — Category, Subject, Description, Priority |
+| 3 | `/grievance/step3` | Supporting Info — Documents, Witnesses, Desired Outcome |
+| 4 | `/grievance/step4` | Review & Submit — Full review before final submission |
+
+## 🎨 UI Preview
+> Dark themed portal with teal accents, animated stepper, and glass-morphism cards.
+
+## 📝 License
+MIT
+```
+
+---
+
+**Step 4 — Add README and push:**
+```
+git add README.md
+git commit -m "Add README"
+git push
